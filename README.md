@@ -5,7 +5,7 @@ This application was generated using JHipster 4.13.3, you can find documentation
 
 To start your application in the dev profile, simply run:
 
-    ./mvnw
+    mvn
 
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
@@ -16,7 +16,7 @@ For further instructions on how to develop with JHipster, have a look at [Using 
 
 To optimize the App application for production, run:
 
-    ./mvnw -Pprod clean package
+    mvn -Pprod clean package
 
 To ensure everything worked, run:
 
@@ -29,7 +29,7 @@ Refer to [Using JHipster in production][] for more details.
 
 To launch your application's tests, run:
 
-    ./mvnw clean test
+    mvn clean test
 
 For more information, refer to the [Running tests page][].
 
@@ -44,15 +44,6 @@ For example, to start a postgresql database in a docker container, run:
 To stop it and remove the container, run:
 
     docker-compose -f src/main/docker/postgresql.yml down
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-    ./mvnw verify -Pprod dockerfile:build
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
 
 For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
 
