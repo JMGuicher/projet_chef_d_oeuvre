@@ -82,17 +82,6 @@ jhipster:
         #max-age: 1800
     mail:
         from: App@localhost
-    swagger:
-        default-include-pattern: /api/.*
-        title: App API
-        description: App API documentation
-        version: 0.0.1
-        terms-of-service-url:
-        contact-name:
-        contact-url:
-        contact-email:
-        license:
-        license-url:
     ribbon:
         display-on-active-profiles: dev
 
