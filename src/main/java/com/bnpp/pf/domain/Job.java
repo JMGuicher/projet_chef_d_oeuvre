@@ -5,20 +5,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 
 @Entity
-@Table(name = "job")
+@Table(name = "_job")
 public class Job extends AbstractAuditingEntity implements Serializable {
 
     @Id
     private Long id;
 
-    @Size(max = 50)
     @Column(name = "name")
     private String name;
+
+    @Column(name = "only_one")
+    private Boolean onlyOne;
 
     public Long getId() {
         return id;
@@ -36,10 +37,31 @@ public class Job extends AbstractAuditingEntity implements Serializable {
         this.name = name;
     }
 
+    public boolean getOnlyOne() {
+        return onlyOne;
+    }
+
+    public void setOnlyOne(boolean onlyOne) {
+        this.onlyOne = onlyOne;
+    }
+
+
+    //empty constructor
+    public Job() {
+
+    }
+
+    public Job(Long id, String name, boolean onlyOne) {
+        this.id = id;
+        this.name = name;
+        this.onlyOne = onlyOne;
+    }
+
     @Override
     public String toString() {
         return "Job{" +
             ", name='" + name + '\'' +
+            ", onlyOne='" + onlyOne + '\'' +
             "}";
     }
 }
