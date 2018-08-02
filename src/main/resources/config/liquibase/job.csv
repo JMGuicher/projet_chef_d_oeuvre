@@ -1,13 +1,13 @@
 id;name;only_one;created_by;last_modified_by
 1;Manager;true;system;system
 2;Facilitateur;false;system;system
-3;Lead_développeur;true;system;system
-4;Développeur_iOS;false;system;system
-5;Développeur_Android;false;system;system
-6;Développeur_Java;false;system;system
-7;Développeur_Liferay;false;system;system
+3;Lead développeur;true;system;system
+4;Développeur iOS;false;system;system
+5;Développeur Android;false;system;system
+6;Développeur Java;false;system;system
+7;Développeur Liferay;false;system;system
 8;Intégrateur;false;system;system
-9;Scrum_master;false;system;system
+9;Scrum master;false;system;system
 10;Architecte;false;system;system
 11;Designer;false;system;system
 12;Indéfini;false;system;system
