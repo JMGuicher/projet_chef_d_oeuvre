@@ -15,13 +15,8 @@ import java.util.List;
 @Repository
 public interface ContributorsRepository extends JpaRepository<Contributors, String> {
 
-    List<Contributors> findAll();
 
-    @Override
-    Contributors save(Contributors s);
 
-    @Override
-    void delete(String s);
 }
 
 

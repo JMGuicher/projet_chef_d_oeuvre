@@ -1,11 +1,9 @@
 package com.bnpp.pf.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -13,10 +11,15 @@ import java.io.Serializable;
 public class Job extends AbstractAuditingEntity implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceJob")
+    @SequenceGenerator(name = "sequenceJob")
     private Long id;
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy="job")
+    private List<Contributors> contributors;
 
     @Column(name = "only_one")
     private Boolean onlyOne;

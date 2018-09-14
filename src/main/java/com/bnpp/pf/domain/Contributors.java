@@ -1,9 +1,8 @@
 package com.bnpp.pf.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.annotation.Nullable;
+import javax.persistence.*;
+import javax.validation.constraints.Null;
 import java.io.Serializable;
 
 @Entity
@@ -11,6 +10,8 @@ import java.io.Serializable;
 public class Contributors extends AbstractAuditingEntity implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceContributor")
+    @SequenceGenerator(name = "sequenceContributor")
     private Long id;
 
     @Column(name = "uid")
@@ -25,8 +26,10 @@ public class Contributors extends AbstractAuditingEntity implements Serializable
     @Column(name = "comments")
     private String comments;
 
-    @Column(name = "job")
-    private Integer job;
+    @JoinColumn(name = "job")
+    @ManyToOne
+    @Null
+    private Job job;
 
     public Long getId() {
         return id;
@@ -68,11 +71,11 @@ public class Contributors extends AbstractAuditingEntity implements Serializable
         this.comments = comments;
     }
 
-    public Integer getJob() {
+    public Job getJob() {
         return job;
     }
 
-    public void setJob(Integer job) {
+    public void setJob(Job job) {
         this.job = job;
     }
 
@@ -80,12 +83,22 @@ public class Contributors extends AbstractAuditingEntity implements Serializable
 
     }
 
-    public Contributors(String uid, String firstname, String lastname, Integer job, String comments) {
+    public Contributors(String uid, String firstname, String lastname, Job job, String comments) {
         this.uid = uid;
         this.firstname = firstname;
         this.lastname = lastname;
         this.job = job;
         this.comments = comments;
+    }
+
+    @Override
+    public String toString() {
+        return "Contributors{" +
+            "id=" + id +
+            ", uid='" + uid + '\'' +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
     }
 }
 
