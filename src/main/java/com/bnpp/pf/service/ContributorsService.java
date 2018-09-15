@@ -26,8 +26,7 @@ public class ContributorsService {
         contributor= contributorsRepository.save(contributor);
         return contributor;
     }
-    public Contributors deleteContributor(Contributors deletedContributor){
+    public void deleteContributor(Long deletedContributor){
         this.contributorsRepository.delete(deletedContributor);
-        return deletedContributor;
     }
 }

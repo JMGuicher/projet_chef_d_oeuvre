@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @Repository
-public interface ContributorsRepository extends JpaRepository<Contributors, String> {
+public interface ContributorsRepository extends JpaRepository<Contributors, Long> {
 
 
 

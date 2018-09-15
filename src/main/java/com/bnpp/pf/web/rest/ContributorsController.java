@@ -31,10 +31,9 @@ public class ContributorsController {
         return contributor;
     }
 
-    @DeleteMapping
-    public Contributors deleteContributors(Contributors deletedContributor) {
-        deletedContributor= contributorsService.deleteContributor(deletedContributor);
-        return deletedContributor;
+    @DeleteMapping("/{id}")
+    public void deleteContributors(@PathVariable Long id) {
+        contributorsService.deleteContributor(id);
     }
 
 
